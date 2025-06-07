@@ -1,0 +1,432 @@
+body {
+    font-family: "Poppins", sans-serif;
+    --button-size: 40px;
+    --padding: 10px;
+}
+
+p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    transition: all ease-in .2s;
+}
+
+#cb1:checked ~ .label-1,
+#cb2:checked ~ .label-2,
+#cb3:checked ~ .label-3,
+#cb4:checked ~ .label-4,
+#cb5:checked ~ .label-5,
+#cb6:checked ~ .label-6,
+#cb7:checked ~ .label-7,
+#cb8:checked ~ .label-8,
+#cb9:checked ~ .label-9,
+#cb0:checked ~ .label-0,
+#cb21:checked ~ .label-21,
+#cb22:checked ~ .label-22,
+#cb23:checked ~ .label-23,
+#cb24:checked ~ .label-24,
+#cb25:checked ~ .label-25,
+#cb26:checked ~ .label-26,
+#cb27:checked ~ .label-27,
+#cb28:checked ~ .label-28,
+#cb29:checked ~ .label-29,
+#cb20:checked ~ .label-20,
+#cbadd:checked ~ .label-add,
+#cbminus:checked ~ .label-minus,
+#cbmult:checked ~ .label-mult {
+    background-color: lightcoral;
+}
+
+input {
+    display: none;
+}
+
+.checkboxes {
+    position: relative;
+    padding-left: 100px;
+}
+
+label {
+    background-color: lightblue;
+    transition: all ease-in .2s;
+    height: var(--button-size);
+    width: var(--button-size);
+    text-align: center;
+    align-content: center;
+    border-radius: 6px;
+    position: absolute;
+    :hover {
+        cursor: pointer;
+    }
+}
+
+.label-1, .label-2, .label-3,
+.label-21, .label-22, .label-23,
+.label-add {
+    top: calc(var(--padding) * 3 + var(--button-size) * 2);
+}
+
+.label-4, .label-5, .label-6,
+.label-24, .label-25, .label-26,
+.label-mult {
+    top: calc(var(--padding) * 2 + var(--button-size));
+}
+
+.label-7, .label-8, .label-9,
+.label-27, .label-28, .label-29,
+.label-minus {
+    top: var(--padding);
+}
+
+.label-1, .label-4, .label-7 {
+    left: var(--padding);
+}
+
+.label-2, .label-5, .label-8, .label-0 {
+    left: calc(var(--padding) * 2 + var(--button-size));
+}
+
+.label-3, .label-6, .label-9 {
+    left: calc(var(--padding) * 3 + var(--button-size) * 2);
+}
+
+.label-21, .label-24, .label-27 {
+    left: calc(var(--padding) * 3 + var(--button-size) * 6);
+}
+
+.label-22, .label-25, .label-28, .label-20 {
+    left: calc(var(--padding) * 4 + var(--button-size) * 7);
+}
+
+.label-23, .label-26, .label-29 {
+    left: calc(var(--padding) * 5 + var(--button-size) * 8);
+}
+
+.label-add,
+.label-mult,
+.label-minus {
+    left: calc(var(--padding) * 3 + var(--button-size) * 4);
+}
+
+.label-0, .label-20 {
+    top: 156px;
+}
+
+.result { 
+    top: var(--padding);
+    left: calc(var(--padding) * 6 + var(--button-size) * 11);
+    font-weight:bold;
+    font-size: 30px;
+}
+.result::before {
+    content: 'Result: ';
+}
+
+#cb0:checked ~ #cbadd:checked ~ #cb20:checked ~ #r0,
+#cb0:checked ~ #cbadd:checked ~ #cb21:checked ~ #r1,
+#cb0:checked ~ #cbadd:checked ~ #cb22:checked ~ #r2,
+#cb0:checked ~ #cbadd:checked ~ #cb23:checked ~ #r3,
+#cb0:checked ~ #cbadd:checked ~ #cb24:checked ~ #r4,
+#cb0:checked ~ #cbadd:checked ~ #cb25:checked ~ #r5,
+#cb0:checked ~ #cbadd:checked ~ #cb26:checked ~ #r6,
+#cb0:checked ~ #cbadd:checked ~ #cb27:checked ~ #r7,
+#cb0:checked ~ #cbadd:checked ~ #cb28:checked ~ #r8,
+#cb0:checked ~ #cbadd:checked ~ #cb29:checked ~ #r9,
+#cb1:checked ~ #cbadd:checked ~ #cb20:checked ~ #r1,
+#cb1:checked ~ #cbadd:checked ~ #cb21:checked ~ #r2,
+#cb1:checked ~ #cbadd:checked ~ #cb22:checked ~ #r3,
+#cb1:checked ~ #cbadd:checked ~ #cb23:checked ~ #r4,
+#cb1:checked ~ #cbadd:checked ~ #cb24:checked ~ #r5,
+#cb1:checked ~ #cbadd:checked ~ #cb25:checked ~ #r6,
+#cb1:checked ~ #cbadd:checked ~ #cb26:checked ~ #r7,
+#cb1:checked ~ #cbadd:checked ~ #cb27:checked ~ #r8,
+#cb1:checked ~ #cbadd:checked ~ #cb28:checked ~ #r9,
+#cb1:checked ~ #cbadd:checked ~ #cb29:checked ~ #r10,
+#cb2:checked ~ #cbadd:checked ~ #cb20:checked ~ #r2,
+#cb2:checked ~ #cbadd:checked ~ #cb21:checked ~ #r3,
+#cb2:checked ~ #cbadd:checked ~ #cb22:checked ~ #r4,
+#cb2:checked ~ #cbadd:checked ~ #cb23:checked ~ #r5,
+#cb2:checked ~ #cbadd:checked ~ #cb24:checked ~ #r6,
+#cb2:checked ~ #cbadd:checked ~ #cb25:checked ~ #r7,
+#cb2:checked ~ #cbadd:checked ~ #cb26:checked ~ #r8,
+#cb2:checked ~ #cbadd:checked ~ #cb27:checked ~ #r9,
+#cb2:checked ~ #cbadd:checked ~ #cb28:checked ~ #r10,
+#cb2:checked ~ #cbadd:checked ~ #cb29:checked ~ #r11,
+#cb3:checked ~ #cbadd:checked ~ #cb20:checked ~ #r3,
+#cb3:checked ~ #cbadd:checked ~ #cb21:checked ~ #r4,
+#cb3:checked ~ #cbadd:checked ~ #cb22:checked ~ #r5,
+#cb3:checked ~ #cbadd:checked ~ #cb23:checked ~ #r6,
+#cb3:checked ~ #cbadd:checked ~ #cb24:checked ~ #r7,
+#cb3:checked ~ #cbadd:checked ~ #cb25:checked ~ #r8,
+#cb3:checked ~ #cbadd:checked ~ #cb26:checked ~ #r9,
+#cb3:checked ~ #cbadd:checked ~ #cb27:checked ~ #r10,
+#cb3:checked ~ #cbadd:checked ~ #cb28:checked ~ #r11,
+#cb3:checked ~ #cbadd:checked ~ #cb29:checked ~ #r12,
+#cb4:checked ~ #cbadd:checked ~ #cb20:checked ~ #r4,
+#cb4:checked ~ #cbadd:checked ~ #cb21:checked ~ #r5,
+#cb4:checked ~ #cbadd:checked ~ #cb22:checked ~ #r6,
+#cb4:checked ~ #cbadd:checked ~ #cb23:checked ~ #r7,
+#cb4:checked ~ #cbadd:checked ~ #cb24:checked ~ #r8,
+#cb4:checked ~ #cbadd:checked ~ #cb25:checked ~ #r9,
+#cb4:checked ~ #cbadd:checked ~ #cb26:checked ~ #r10,
+#cb4:checked ~ #cbadd:checked ~ #cb27:checked ~ #r11,
+#cb4:checked ~ #cbadd:checked ~ #cb28:checked ~ #r12,
+#cb4:checked ~ #cbadd:checked ~ #cb29:checked ~ #r13,
+#cb5:checked ~ #cbadd:checked ~ #cb20:checked ~ #r5,
+#cb5:checked ~ #cbadd:checked ~ #cb21:checked ~ #r6,
+#cb5:checked ~ #cbadd:checked ~ #cb22:checked ~ #r7,
+#cb5:checked ~ #cbadd:checked ~ #cb23:checked ~ #r8,
+#cb5:checked ~ #cbadd:checked ~ #cb24:checked ~ #r9,
+#cb5:checked ~ #cbadd:checked ~ #cb25:checked ~ #r10,
+#cb5:checked ~ #cbadd:checked ~ #cb26:checked ~ #r11,
+#cb5:checked ~ #cbadd:checked ~ #cb27:checked ~ #r12,
+#cb5:checked ~ #cbadd:checked ~ #cb28:checked ~ #r13,
+#cb5:checked ~ #cbadd:checked ~ #cb29:checked ~ #r14,
+#cb6:checked ~ #cbadd:checked ~ #cb20:checked ~ #r6,
+#cb6:checked ~ #cbadd:checked ~ #cb21:checked ~ #r7,
+#cb6:checked ~ #cbadd:checked ~ #cb22:checked ~ #r8,
+#cb6:checked ~ #cbadd:checked ~ #cb23:checked ~ #r9,
+#cb6:checked ~ #cbadd:checked ~ #cb24:checked ~ #r10,
+#cb6:checked ~ #cbadd:checked ~ #cb25:checked ~ #r11,
+#cb6:checked ~ #cbadd:checked ~ #cb26:checked ~ #r12,
+#cb6:checked ~ #cbadd:checked ~ #cb27:checked ~ #r13,
+#cb6:checked ~ #cbadd:checked ~ #cb28:checked ~ #r14,
+#cb6:checked ~ #cbadd:checked ~ #cb29:checked ~ #r15,
+#cb7:checked ~ #cbadd:checked ~ #cb20:checked ~ #r7,
+#cb7:checked ~ #cbadd:checked ~ #cb21:checked ~ #r8,
+#cb7:checked ~ #cbadd:checked ~ #cb22:checked ~ #r9,
+#cb7:checked ~ #cbadd:checked ~ #cb23:checked ~ #r10,
+#cb7:checked ~ #cbadd:checked ~ #cb24:checked ~ #r11,
+#cb7:checked ~ #cbadd:checked ~ #cb25:checked ~ #r12,
+#cb7:checked ~ #cbadd:checked ~ #cb26:checked ~ #r13,
+#cb7:checked ~ #cbadd:checked ~ #cb27:checked ~ #r14,
+#cb7:checked ~ #cbadd:checked ~ #cb28:checked ~ #r15,
+#cb7:checked ~ #cbadd:checked ~ #cb29:checked ~ #r16,
+#cb8:checked ~ #cbadd:checked ~ #cb20:checked ~ #r8,
+#cb8:checked ~ #cbadd:checked ~ #cb21:checked ~ #r9,
+#cb8:checked ~ #cbadd:checked ~ #cb22:checked ~ #r10,
+#cb8:checked ~ #cbadd:checked ~ #cb23:checked ~ #r11,
+#cb8:checked ~ #cbadd:checked ~ #cb24:checked ~ #r12,
+#cb8:checked ~ #cbadd:checked ~ #cb25:checked ~ #r13,
+#cb8:checked ~ #cbadd:checked ~ #cb26:checked ~ #r14,
+#cb8:checked ~ #cbadd:checked ~ #cb27:checked ~ #r15,
+#cb8:checked ~ #cbadd:checked ~ #cb28:checked ~ #r16,
+#cb8:checked ~ #cbadd:checked ~ #cb29:checked ~ #r17,
+#cb9:checked ~ #cbadd:checked ~ #cb20:checked ~ #r9,
+#cb9:checked ~ #cbadd:checked ~ #cb21:checked ~ #r10,
+#cb9:checked ~ #cbadd:checked ~ #cb22:checked ~ #r11,
+#cb9:checked ~ #cbadd:checked ~ #cb23:checked ~ #r12,
+#cb9:checked ~ #cbadd:checked ~ #cb24:checked ~ #r13,
+#cb9:checked ~ #cbadd:checked ~ #cb25:checked ~ #r14,
+#cb9:checked ~ #cbadd:checked ~ #cb26:checked ~ #r15,
+#cb9:checked ~ #cbadd:checked ~ #cb27:checked ~ #r16,
+#cb9:checked ~ #cbadd:checked ~ #cb28:checked ~ #r17,
+#cb9:checked ~ #cbadd:checked ~ #cb29:checked ~ #r18,
+
+#cb0:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb21:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb22:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb23:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb24:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb25:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb26:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb27:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb28:checked ~ #r0,
+#cb0:checked ~ #cbmult:checked ~ #cb29:checked ~ #r0,
+#cb1:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb1:checked ~ #cbmult:checked ~ #cb21:checked ~ #r1,
+#cb1:checked ~ #cbmult:checked ~ #cb22:checked ~ #r2,
+#cb1:checked ~ #cbmult:checked ~ #cb23:checked ~ #r3,
+#cb1:checked ~ #cbmult:checked ~ #cb24:checked ~ #r4,
+#cb1:checked ~ #cbmult:checked ~ #cb25:checked ~ #r5,
+#cb1:checked ~ #cbmult:checked ~ #cb26:checked ~ #r6,
+#cb1:checked ~ #cbmult:checked ~ #cb27:checked ~ #r7,
+#cb1:checked ~ #cbmult:checked ~ #cb28:checked ~ #r8,
+#cb1:checked ~ #cbmult:checked ~ #cb29:checked ~ #r9,
+#cb2:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb2:checked ~ #cbmult:checked ~ #cb21:checked ~ #r2,
+#cb2:checked ~ #cbmult:checked ~ #cb22:checked ~ #r4,
+#cb2:checked ~ #cbmult:checked ~ #cb23:checked ~ #r6,
+#cb2:checked ~ #cbmult:checked ~ #cb24:checked ~ #r8,
+#cb2:checked ~ #cbmult:checked ~ #cb25:checked ~ #r10,
+#cb2:checked ~ #cbmult:checked ~ #cb26:checked ~ #r12,
+#cb2:checked ~ #cbmult:checked ~ #cb27:checked ~ #r14,
+#cb2:checked ~ #cbmult:checked ~ #cb28:checked ~ #r16,
+#cb2:checked ~ #cbmult:checked ~ #cb29:checked ~ #r18,
+#cb3:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb3:checked ~ #cbmult:checked ~ #cb21:checked ~ #r3,
+#cb3:checked ~ #cbmult:checked ~ #cb22:checked ~ #r6,
+#cb3:checked ~ #cbmult:checked ~ #cb23:checked ~ #r9,
+#cb3:checked ~ #cbmult:checked ~ #cb24:checked ~ #r12,
+#cb3:checked ~ #cbmult:checked ~ #cb25:checked ~ #r15,
+#cb3:checked ~ #cbmult:checked ~ #cb26:checked ~ #r18,
+#cb3:checked ~ #cbmult:checked ~ #cb27:checked ~ #r21,
+#cb3:checked ~ #cbmult:checked ~ #cb28:checked ~ #r24,
+#cb3:checked ~ #cbmult:checked ~ #cb29:checked ~ #r27,
+#cb4:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb4:checked ~ #cbmult:checked ~ #cb21:checked ~ #r4,
+#cb4:checked ~ #cbmult:checked ~ #cb22:checked ~ #r8,
+#cb4:checked ~ #cbmult:checked ~ #cb23:checked ~ #r12,
+#cb4:checked ~ #cbmult:checked ~ #cb24:checked ~ #r16,
+#cb4:checked ~ #cbmult:checked ~ #cb25:checked ~ #r20,
+#cb4:checked ~ #cbmult:checked ~ #cb26:checked ~ #r24,
+#cb4:checked ~ #cbmult:checked ~ #cb27:checked ~ #r28,
+#cb4:checked ~ #cbmult:checked ~ #cb28:checked ~ #r32,
+#cb4:checked ~ #cbmult:checked ~ #cb29:checked ~ #r36,
+#cb5:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb5:checked ~ #cbmult:checked ~ #cb21:checked ~ #r5,
+#cb5:checked ~ #cbmult:checked ~ #cb22:checked ~ #r10,
+#cb5:checked ~ #cbmult:checked ~ #cb23:checked ~ #r15,
+#cb5:checked ~ #cbmult:checked ~ #cb24:checked ~ #r20,
+#cb5:checked ~ #cbmult:checked ~ #cb25:checked ~ #r25,
+#cb5:checked ~ #cbmult:checked ~ #cb26:checked ~ #r30,
+#cb5:checked ~ #cbmult:checked ~ #cb27:checked ~ #r35,
+#cb5:checked ~ #cbmult:checked ~ #cb28:checked ~ #r40,
+#cb5:checked ~ #cbmult:checked ~ #cb29:checked ~ #r45,
+#cb6:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb6:checked ~ #cbmult:checked ~ #cb21:checked ~ #r6,
+#cb6:checked ~ #cbmult:checked ~ #cb22:checked ~ #r12,
+#cb6:checked ~ #cbmult:checked ~ #cb23:checked ~ #r18,
+#cb6:checked ~ #cbmult:checked ~ #cb24:checked ~ #r24,
+#cb6:checked ~ #cbmult:checked ~ #cb25:checked ~ #r30,
+#cb6:checked ~ #cbmult:checked ~ #cb26:checked ~ #r36,
+#cb6:checked ~ #cbmult:checked ~ #cb27:checked ~ #r42,
+#cb6:checked ~ #cbmult:checked ~ #cb28:checked ~ #r48,
+#cb6:checked ~ #cbmult:checked ~ #cb29:checked ~ #r54,
+#cb7:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb7:checked ~ #cbmult:checked ~ #cb21:checked ~ #r7,
+#cb7:checked ~ #cbmult:checked ~ #cb22:checked ~ #r14,
+#cb7:checked ~ #cbmult:checked ~ #cb23:checked ~ #r21,
+#cb7:checked ~ #cbmult:checked ~ #cb24:checked ~ #r28,
+#cb7:checked ~ #cbmult:checked ~ #cb25:checked ~ #r35,
+#cb7:checked ~ #cbmult:checked ~ #cb26:checked ~ #r42,
+#cb7:checked ~ #cbmult:checked ~ #cb27:checked ~ #r49,
+#cb7:checked ~ #cbmult:checked ~ #cb28:checked ~ #r56,
+#cb7:checked ~ #cbmult:checked ~ #cb29:checked ~ #r63,
+#cb8:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb8:checked ~ #cbmult:checked ~ #cb21:checked ~ #r8,
+#cb8:checked ~ #cbmult:checked ~ #cb22:checked ~ #r16,
+#cb8:checked ~ #cbmult:checked ~ #cb23:checked ~ #r24,
+#cb8:checked ~ #cbmult:checked ~ #cb24:checked ~ #r32,
+#cb8:checked ~ #cbmult:checked ~ #cb25:checked ~ #r40,
+#cb8:checked ~ #cbmult:checked ~ #cb26:checked ~ #r48,
+#cb8:checked ~ #cbmult:checked ~ #cb27:checked ~ #r56,
+#cb8:checked ~ #cbmult:checked ~ #cb28:checked ~ #r64,
+#cb8:checked ~ #cbmult:checked ~ #cb29:checked ~ #r72,
+#cb9:checked ~ #cbmult:checked ~ #cb20:checked ~ #r0,
+#cb9:checked ~ #cbmult:checked ~ #cb21:checked ~ #r9,
+#cb9:checked ~ #cbmult:checked ~ #cb22:checked ~ #r18,
+#cb9:checked ~ #cbmult:checked ~ #cb23:checked ~ #r27,
+#cb9:checked ~ #cbmult:checked ~ #cb24:checked ~ #r36,
+#cb9:checked ~ #cbmult:checked ~ #cb25:checked ~ #r45,
+#cb9:checked ~ #cbmult:checked ~ #cb26:checked ~ #r54,
+#cb9:checked ~ #cbmult:checked ~ #cb27:checked ~ #r63,
+#cb9:checked ~ #cbmult:checked ~ #cb28:checked ~ #r72,
+#cb9:checked ~ #cbmult:checked ~ #cb29:checked ~ #r81,
+
+#cb0:checked ~ #cbminus:checked ~ #cb20:checked ~ #r0,
+#cb0:checked ~ #cbminus:checked ~ #cb21:checked ~ #r-1,
+#cb0:checked ~ #cbminus:checked ~ #cb22:checked ~ #r-2,
+#cb0:checked ~ #cbminus:checked ~ #cb23:checked ~ #r-3,
+#cb0:checked ~ #cbminus:checked ~ #cb24:checked ~ #r-4,
+#cb0:checked ~ #cbminus:checked ~ #cb25:checked ~ #r-5,
+#cb0:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-6,
+#cb0:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-7,
+#cb0:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-8,
+#cb0:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-9,
+#cb1:checked ~ #cbminus:checked ~ #cb20:checked ~ #r1,
+#cb1:checked ~ #cbminus:checked ~ #cb21:checked ~ #r0,
+#cb1:checked ~ #cbminus:checked ~ #cb22:checked ~ #r-1,
+#cb1:checked ~ #cbminus:checked ~ #cb23:checked ~ #r-2,
+#cb1:checked ~ #cbminus:checked ~ #cb24:checked ~ #r-3,
+#cb1:checked ~ #cbminus:checked ~ #cb25:checked ~ #r-4,
+#cb1:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-5,
+#cb1:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-6,
+#cb1:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-7,
+#cb1:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-8,
+#cb2:checked ~ #cbminus:checked ~ #cb20:checked ~ #r2,
+#cb2:checked ~ #cbminus:checked ~ #cb21:checked ~ #r1,
+#cb2:checked ~ #cbminus:checked ~ #cb22:checked ~ #r0,
+#cb2:checked ~ #cbminus:checked ~ #cb23:checked ~ #r-1,
+#cb2:checked ~ #cbminus:checked ~ #cb24:checked ~ #r-2,
+#cb2:checked ~ #cbminus:checked ~ #cb25:checked ~ #r-3,
+#cb2:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-4,
+#cb2:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-5,
+#cb2:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-6,
+#cb2:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-7,
+#cb3:checked ~ #cbminus:checked ~ #cb20:checked ~ #r3,
+#cb3:checked ~ #cbminus:checked ~ #cb21:checked ~ #r2,
+#cb3:checked ~ #cbminus:checked ~ #cb22:checked ~ #r1,
+#cb3:checked ~ #cbminus:checked ~ #cb23:checked ~ #r0,
+#cb3:checked ~ #cbminus:checked ~ #cb24:checked ~ #r-1,
+#cb3:checked ~ #cbminus:checked ~ #cb25:checked ~ #r-2,
+#cb3:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-3,
+#cb3:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-4,
+#cb3:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-5,
+#cb3:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-6,
+#cb4:checked ~ #cbminus:checked ~ #cb20:checked ~ #r4,
+#cb4:checked ~ #cbminus:checked ~ #cb21:checked ~ #r3,
+#cb4:checked ~ #cbminus:checked ~ #cb22:checked ~ #r2,
+#cb4:checked ~ #cbminus:checked ~ #cb23:checked ~ #r1,
+#cb4:checked ~ #cbminus:checked ~ #cb24:checked ~ #r0,
+#cb4:checked ~ #cbminus:checked ~ #cb25:checked ~ #r-1,
+#cb4:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-2,
+#cb4:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-3,
+#cb4:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-4,
+#cb4:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-5,
+#cb5:checked ~ #cbminus:checked ~ #cb20:checked ~ #r5,
+#cb5:checked ~ #cbminus:checked ~ #cb21:checked ~ #r4,
+#cb5:checked ~ #cbminus:checked ~ #cb22:checked ~ #r3,
+#cb5:checked ~ #cbminus:checked ~ #cb23:checked ~ #r2,
+#cb5:checked ~ #cbminus:checked ~ #cb24:checked ~ #r1,
+#cb5:checked ~ #cbminus:checked ~ #cb25:checked ~ #r0,
+#cb5:checked ~ #cbminus:checked ~ #cb26:checked ~ #r-1,
+#cb5:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-2,
+#cb5:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-3,
+#cb5:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-4,
+#cb6:checked ~ #cbminus:checked ~ #cb20:checked ~ #r6,
+#cb6:checked ~ #cbminus:checked ~ #cb21:checked ~ #r5,
+#cb6:checked ~ #cbminus:checked ~ #cb22:checked ~ #r4,
+#cb6:checked ~ #cbminus:checked ~ #cb23:checked ~ #r3,
+#cb6:checked ~ #cbminus:checked ~ #cb24:checked ~ #r2,
+#cb6:checked ~ #cbminus:checked ~ #cb25:checked ~ #r1,
+#cb6:checked ~ #cbminus:checked ~ #cb26:checked ~ #r0,
+#cb6:checked ~ #cbminus:checked ~ #cb27:checked ~ #r-1,
+#cb6:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-2,
+#cb6:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-3,
+#cb7:checked ~ #cbminus:checked ~ #cb20:checked ~ #r7,
+#cb7:checked ~ #cbminus:checked ~ #cb21:checked ~ #r6,
+#cb7:checked ~ #cbminus:checked ~ #cb22:checked ~ #r5,
+#cb7:checked ~ #cbminus:checked ~ #cb23:checked ~ #r4,
+#cb7:checked ~ #cbminus:checked ~ #cb24:checked ~ #r3,
+#cb7:checked ~ #cbminus:checked ~ #cb25:checked ~ #r2,
+#cb7:checked ~ #cbminus:checked ~ #cb26:checked ~ #r1,
+#cb7:checked ~ #cbminus:checked ~ #cb27:checked ~ #r0,
+#cb7:checked ~ #cbminus:checked ~ #cb28:checked ~ #r-1,
+#cb7:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-2,
+#cb8:checked ~ #cbminus:checked ~ #cb20:checked ~ #r8,
+#cb8:checked ~ #cbminus:checked ~ #cb21:checked ~ #r7,
+#cb8:checked ~ #cbminus:checked ~ #cb22:checked ~ #r6,
+#cb8:checked ~ #cbminus:checked ~ #cb23:checked ~ #r5,
+#cb8:checked ~ #cbminus:checked ~ #cb24:checked ~ #r4,
+#cb8:checked ~ #cbminus:checked ~ #cb25:checked ~ #r3,
+#cb8:checked ~ #cbminus:checked ~ #cb26:checked ~ #r2,
+#cb8:checked ~ #cbminus:checked ~ #cb27:checked ~ #r1,
+#cb8:checked ~ #cbminus:checked ~ #cb28:checked ~ #r0,
+#cb8:checked ~ #cbminus:checked ~ #cb29:checked ~ #r-1,
+#cb9:checked ~ #cbminus:checked ~ #cb20:checked ~ #r9,
+#cb9:checked ~ #cbminus:checked ~ #cb21:checked ~ #r8,
+#cb9:checked ~ #cbminus:checked ~ #cb22:checked ~ #r7,
+#cb9:checked ~ #cbminus:checked ~ #cb23:checked ~ #r6,
+#cb9:checked ~ #cbminus:checked ~ #cb24:checked ~ #r5,
+#cb9:checked ~ #cbminus:checked ~ #cb25:checked ~ #r4,
+#cb9:checked ~ #cbminus:checked ~ #cb26:checked ~ #r3,
+#cb9:checked ~ #cbminus:checked ~ #cb27:checked ~ #r2,
+#cb9:checked ~ #cbminus:checked ~ #cb28:checked ~ #r1,
+#cb9:checked ~ #cbminus:checked ~ #cb29:checked ~ #r0 {
+    opacity: 1;
+}
+
+
